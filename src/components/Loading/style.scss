@@ -1,0 +1,13 @@
+.loading{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-icon {
+   width: 130px;
+   height: 100px;
+   background: url('//st.haiziwang.com/static/b2c/sale/sale_common/css/images/loading.png') no-repeat;
+   background-size: contain;
+ }
+}
