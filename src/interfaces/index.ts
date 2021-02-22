@@ -1,1 +1,3 @@
-export * from './track'
+export interface Test {
+  name: string;
+}
