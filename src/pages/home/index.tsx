@@ -1,25 +1,24 @@
-import React, { Fragment, useEffect, useState } from 'react'
-import { useRouteMatch, useLocation, useHistory, useParams } from 'react-router-dom'
+import React, { Fragment, useEffect } from 'react'
+import {observer} from 'mobx-react'
 import './style.scss';
 
-import { trackView, trackClick } from '@/utils'
-
-import BackTop from '@/components/backTop'
+import {useStore} from '@/hooks/store'
 
 const Index = (props: any) => {
-  const testClick = () => {
-    console.log('click');
+  const {testStore} = useStore()
+  const testClick = async () => {
+    const res = await testStore.min()
+    console.log(res,'testStore');
   }
-  const his = useParams()
-  console.log(his);
-  
   return (
     <Fragment>
-      <div className="index">index</div>
-      <div className="button" onClick={testClick}>button</div>
-      <BackTop />
+      <div className="index">count: {testStore.count}</div>
+      <div className="index">count1: {testStore.count1}</div>
+      <div className="index">count2: {testStore.count2}</div>
+      <div className="button" onClick={()=>{testStore.add()}}>add</div>
+      <div className="button" onClick={testClick}>min</div>
     </Fragment>
   )
 }
 
-export default Index
+export default observer(Index)

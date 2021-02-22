@@ -2,7 +2,7 @@
   "name": "react-seed",
   "version": "0.1.0",
   "private": true,
-  "homepage": "youppath",
+  "homepage": "build/",
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
@@ -18,9 +18,11 @@
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
+    "antd-mobile": "^2.3.4",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
+    "babel-plugin-import": "^1.13.3",
     "babel-plugin-named-asset-import": "^0.3.7",
     "babel-preset-react-app": "^10.0.0",
     "bfj": "^7.0.2",
@@ -49,6 +51,8 @@
     "jest-watch-typeahead": "0.6.1",
     "js-cookie": "^2.2.1",
     "mini-css-extract-plugin": "0.11.3",
+    "mobx": "^6.1.7",
+    "mobx-react": "^7.1.0",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.2.1",
@@ -161,6 +165,15 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd-mobile",
+          "style": true
+        }
+      ]
     ]
   },
   "devDependencies": {}

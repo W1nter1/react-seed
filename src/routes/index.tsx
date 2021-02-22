@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, LazyExoticComponent} from 'react'
+import React, { Suspense, lazy, LazyExoticComponent } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import routers from './route'
 import Loading from '@/components/Loading'
@@ -15,32 +15,32 @@ const SuspenseComponent = (Component: LazyExoticComponent<any>) => (
 const renderRouter = (routers: any) => {
   if (!Array.isArray(routers)) return null;
   return (
-    <Switch>
-      {routers.map((route: any, index: number) => {
-        const {path = '', exact = true, strict=true, redirect= '',component =()=>{}} = route
-        if (redirect) {
+      <Switch>
+        {routers.map((route: any, index: number) => {
+          const { path = '', exact = true, strict = true, redirect = '', component = () => { } } = route
+          if (redirect) {
+            return (
+              <Redirect
+                key={path || index}
+                exact={exact}
+                strict={strict}
+                from={path}
+                to={redirect}
+              />
+            );
+          }
           return (
-            <Redirect
+            <Route
               key={path || index}
               exact={exact}
-              strict={strict}
-              from={path}
-              to={redirect}
+              strict={exact}
+              path={path}
+              component={SuspenseComponent(lazy(component))}
             />
           );
-        }
-        return (
-          <Route
-            key={path || index}
-            exact={exact}
-            strict={exact}
-            path={path}
-            component={SuspenseComponent(lazy(component))}
-          />
-        );
-      })}
-      <Redirect path="*" to="/"></Redirect>
-    </Switch>
+        })}
+        <Redirect path="*" to="/"></Redirect>
+      </Switch>
   );
 };
 

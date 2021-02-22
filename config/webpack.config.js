@@ -133,8 +133,8 @@ module.exports = function (webpackEnv) {
             require('postcss-pxtorem')({
               rootValue: 100,
               propWhiteList: [],
-              minPixelValue:2,
-            })
+              minPixelValue: 2,
+            }),
           ],
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
         },
@@ -413,6 +413,7 @@ module.exports = function (webpackEnv) {
                 ],
 
                 plugins: [
+                  ['import', { libraryName: 'antd-mobile', style: 'css' }],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {

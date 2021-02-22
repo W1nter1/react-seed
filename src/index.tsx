@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import initReactFastclick from 'react-fastclick';
 import VS from 'vconsole'
 import ErrorBoundary from './ErrorBoundary'
 import RouterConfig from "./routes";
 import reportWebVitals from './reportWebVitals';
-
 import '@/libs/font'
-import { getQuery } from '@/utils'
-import initReactFastclick from 'react-fastclick';
-initReactFastclick();
 
+import { getQuery } from '@/utils'
+
+initReactFastclick();
 function regesiterVconsole() {
   if (process.env.NODE_ENV === 'development' || getQuery('kwt_debug') === 'on') {
-    new VS()
+    new VS() //开启vconsole调试
   }
 }
-regesiterVconsole() // 开启vconsole调试
+regesiterVconsole() 
 
 ReactDOM.render(
   <ErrorBoundary>
