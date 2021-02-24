@@ -1,0 +1,33 @@
+{
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"plugins": [
+		"@typescript-eslint/eslint-plugin"
+	],
+	"parser": "@typescript-eslint/parser",          // https://github.com/babel/babel-eslint
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 6,
+		"sourceType": "module"
+	},
+	"env": {                           // http://eslint.org/docs/user-guide/configuring.html#specifying-environments
+		"browser": true,                 // browser global variables
+		"node": true,                    // Node.js global variables and Node.js-specific rules
+		"es6": true,
+		"mocha": true,
+		"jest": true
+	},
+	"globals": {
+		"JSX": true,
+		"React": true,
+		"NodeJS": true,
+		"Promise": true
+	},
+	"rules": {
+	}
+}

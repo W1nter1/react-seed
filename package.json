@@ -19,6 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "antd-mobile": "^2.3.4",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
@@ -62,6 +63,7 @@
     "postcss-pxtorem": "^5.1.1",
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
+    "qs": "^6.9.6",
     "react": "^17.0.1",
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.2",
@@ -90,7 +92,8 @@
   "scripts": {
     "start": "HTTPS=true SSL_CRT_FILE=./.cert/cert.pem SSL_KEY_FILE=./.cert/key.pem node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint": "eslint --ext .ts,.tsx,.js src"
   },
   "eslintConfig": {
     "extends": [
