@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "target": "es5",
     "lib": [
       "dom",
@@ -20,19 +19,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "paths": {
-      "@/*": ["./src/*"],
-    },
   },
   "include": [
     "src"
   ],
-  "plugins": [
-    "react-hooks"
-  ],
-  "rules":{
-    "no-implicit-dependencies": ["optional", ["src/*"]],
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
-  },
+  "extends": "./tsconfig-extend.json"
 }
