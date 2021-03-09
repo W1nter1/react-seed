@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import initReactFastclick from 'react-fastclick';
+import fastclick from 'fastclick';
 import VS from 'vconsole'
 import ErrorBoundary from './ErrorBoundary'
 import RouterConfig from "./routes";
@@ -9,7 +9,9 @@ import '@/libs/font'
 
 import { getQuery } from '@/utils'
 
-initReactFastclick();
+fastclick.attach(document.body); 
+
+
 function regesiterVconsole() {
   if (process.env.NODE_ENV === 'development' || getQuery('kwt_debug') === 'on') {
     new VS() //开启vconsole调试

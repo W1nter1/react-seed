@@ -1,2 +1,2 @@
-declare module 'react-fastclick';
+declare module 'fastclick';
 declare module 'qs';
